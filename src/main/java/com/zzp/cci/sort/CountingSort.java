@@ -1,5 +1,8 @@
 package com.zzp.cci.sort;
 
+/**
+ * Created by zhenpeng on 10/24/16.
+ */
 public class CountingSort {
     public void countingSort(int[] a, int k) {
         int[] b = new int[a.length];
