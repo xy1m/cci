@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class ThreeStackByArray {
     public static void main(String... args) {
-        Stack stack = new Stack();
+        Stack<Integer> stack = new Stack<>();
         stack.push(0, 1);
         stack.push(0, 2);
         stack.push(0, 3);
@@ -22,7 +22,7 @@ public class ThreeStackByArray {
     }
 }
 
-class Stack {
+class Stack<N> {
     int stackNum = 3;
     int stackSize = 100;
     int[] buffer = new int[stackSize * stackNum];
