@@ -1,4 +1,4 @@
-package com.zzp.cci.stack;
+package com.zzp.cci.stackqueue;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -25,7 +25,7 @@ public class SetOfStacks<T> {
 
     public T pop() {
         LinkedList<T> last = getLastStack();
-        if (last == null) throw new RuntimeException("Trying to pop from empty stack");
+        if (last == null) throw new RuntimeException("Trying to pop from empty stackqueue");
         T v = last.pop();
         if (last.isEmpty()) {
             stacks.remove(stacks.size() - 1);
@@ -35,7 +35,7 @@ public class SetOfStacks<T> {
 
     public T peek() {
         LinkedList<T> last = getLastStack();
-        if (last == null) throw new RuntimeException("Trying to pop from empty stack");
+        if (last == null) throw new RuntimeException("Trying to pop from empty stackqueue");
         return last.peek();
     }
 

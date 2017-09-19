@@ -46,11 +46,11 @@ public class HashMapList<T, E> {
         String[] strings = new String[]{"0", "1", "22", "333"};
 /*        HashMap<Integer, ArrayList<String>> mapList = new HashMap<>();
         for (String s : strings) {
-            int key = s.length();
-            if (!mapList.containsKey(key)) {
-                mapList.put(key, new ArrayList<>());
+            int data = s.length();
+            if (!mapList.containsKey(data)) {
+                mapList.put(data, new ArrayList<>());
             }
-            mapList.get(key).add(s);
+            mapList.get(data).add(s);
         }
         System.out.println(mapList);*/
         HashMapList<Integer, String> mapList = new HashMapList<>();

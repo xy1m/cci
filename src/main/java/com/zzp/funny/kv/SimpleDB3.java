@@ -398,9 +398,9 @@ class Parser {
  * @Storage is the unique data realm and keep the latest information, it contains @Map and @Counter to store data
  * and counter information respectively, when there is any write operation, update them accordingly.
  * @TransactionManager records a series of @Transaction in a @Stack, when transaction operation executed, manipulate the
- * stack accordingly, as data operations, perform in current transaction.
+ * stackqueue accordingly, as data operations, perform in current transaction.
  * @Transaction records the status before data operations perform, when rollback, just perform all the Undo operation in
- * the log stack.
+ * the log stackqueue.
  */
 public class SimpleDB3 {
     public static void main(String args[]) throws Exception {

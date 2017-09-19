@@ -1,40 +1,21 @@
 package com.zzp.cci.datastructure;
 
+import com.zzp.cci.lib.TreeNode;
+
 /**
  * Created by zhenpeng on 10/27/16.
  */
 public class BinarySearchTree {
     // search minimum maximum successor predecessor
-    public void inOrderWalk(TreeNode root) {
-        if (root == null) return;
-        inOrderWalk(root.left);
-        System.out.println(root.key);
-        inOrderWalk(root.right);
-    }
-
-    public void preOrderWalk(TreeNode root) {
-        if (root == null) return;
-        System.out.println(root.key);
-        preOrderWalk(root.left);
-        preOrderWalk(root.right);
-    }
-
-    public void postOrderWalk(TreeNode root) {
-        if (root == null) return;
-        postOrderWalk(root.left);
-        postOrderWalk(root.right);
-        System.out.println(root.key);
-    }
-
     public TreeNode search(TreeNode x, int k) {
-        if (x == null || x.key == k) return x;
-        if (k < x.key) return search(x.left, k);
+        if (x == null || x.data == k) return x;
+        if (k < x.data) return search(x.left, k);
         else return search(x.right, k);
     }
 
     public TreeNode interativeSearch(TreeNode x, int k) {
-        while (x != null && x.key != k) {
-            if (k < x.key) {
+        while (x != null && x.data != k) {
+            if (k < x.data) {
                 x = x.left;
             } else {
                 x = x.right;
@@ -86,7 +67,7 @@ public class BinarySearchTree {
         TreeNode x = t;
         while (x != null) {
             y = x;
-            if (z.key < x.key) {
+            if (z.data < x.data) {
                 x = x.left;
             } else {
                 x = x.right;
@@ -95,7 +76,7 @@ public class BinarySearchTree {
         z.parent = y;
         if (y == null) {
             return z;
-        } else if (z.key < y.key) {
+        } else if (z.data < y.data) {
             y.left = z;
         } else {
             y.right = z;

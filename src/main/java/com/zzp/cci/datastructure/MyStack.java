@@ -18,7 +18,7 @@ public class MyStack<T> {
     }
 
     public T pop() {
-        if (top == null) throw new RuntimeException("Trying to pop from empty stack!");
+        if (top == null) throw new RuntimeException("Trying to pop from empty stackqueue!");
         T item = top.data;
         top = top.next;
         size--;
@@ -33,7 +33,7 @@ public class MyStack<T> {
     }
 
     public T peek() {
-        if (top == null) throw new RuntimeException("Trying to peek from empty stack!");
+        if (top == null) throw new RuntimeException("Trying to peek from empty stackqueue!");
         return top.data;
     }
 

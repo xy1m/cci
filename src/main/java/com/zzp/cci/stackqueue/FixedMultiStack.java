@@ -1,4 +1,4 @@
-package com.zzp.cci.stack;
+package com.zzp.cci.stackqueue;
 
 public class FixedMultiStack {
     private int numberOfStacks;
@@ -14,13 +14,13 @@ public class FixedMultiStack {
     }
 
     public void push(int num, int value) {
-        if (isFull(num)) throw new RuntimeException("stack overflow");
+        if (isFull(num)) throw new RuntimeException("stackqueue overflow");
         sizes[num]++;
         values[indexOfTop(num)] = value;
     }
 
     public int pop(int num) {
-        if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty stack");
+        if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty stackqueue");
         int item = values[indexOfTop(num)];
         // clear element;
         values[indexOfTop(num)] = 0;
@@ -29,7 +29,7 @@ public class FixedMultiStack {
     }
 
     public int peek(int num) {
-        if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty stack");
+        if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty stackqueue");
         return values[indexOfTop(num)];
     }
 

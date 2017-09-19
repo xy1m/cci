@@ -5,7 +5,7 @@ package com.zzp.cci.array;
  */
 public class C1_7 {
     public void setZeros(int[][] matrix) {
-        // Bit vector
+        // BitOperation vector
         boolean[] row = new boolean[matrix.length];
         boolean[] column = new boolean[matrix[0].length];
         for (int i = 0; i < matrix.length; i++) {

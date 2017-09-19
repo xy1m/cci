@@ -29,7 +29,7 @@ public class MaxSlidingWindow {
         }
         System.out.println(sb.toString());
 
-        Deque<Integer> deque=new ArrayDeque<>();
+        Deque<Integer> deque = new ArrayDeque<>();
         deque.offer(1);
         deque.offer(2);
         deque.offer(3);

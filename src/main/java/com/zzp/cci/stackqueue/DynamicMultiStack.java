@@ -1,4 +1,4 @@
-package com.zzp.cci.stack;
+package com.zzp.cci.stackqueue;
 
 public class DynamicMultiStack {
     //TODO
