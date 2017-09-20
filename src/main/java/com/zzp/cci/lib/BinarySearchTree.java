@@ -1,4 +1,4 @@
-package com.zzp.cci.datastructure;
+package com.zzp.cci.lib;
 
 import com.zzp.cci.lib.TreeNode;
 

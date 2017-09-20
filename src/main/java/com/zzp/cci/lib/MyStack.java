@@ -1,4 +1,4 @@
-package com.zzp.cci.datastructure;
+package com.zzp.cci.lib;
 
 public class MyStack<T> {
     private static class StackNode<T> {
@@ -18,7 +18,7 @@ public class MyStack<T> {
     }
 
     public T pop() {
-        if (top == null) throw new RuntimeException("Trying to pop from empty stackqueue!");
+        if (top == null) throw new RuntimeException("Trying to pop from empty stack!");
         T item = top.data;
         top = top.next;
         size--;
@@ -33,7 +33,7 @@ public class MyStack<T> {
     }
 
     public T peek() {
-        if (top == null) throw new RuntimeException("Trying to peek from empty stackqueue!");
+        if (top == null) throw new RuntimeException("Trying to peek from empty stack!");
         return top.data;
     }
 

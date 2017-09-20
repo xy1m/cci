@@ -1,4 +1,4 @@
-package com.zzp.cci.datastructure;
+package com.zzp.cci.lib;
 
 public class MyQueue<T> {
     private static class QueueNode<T> {

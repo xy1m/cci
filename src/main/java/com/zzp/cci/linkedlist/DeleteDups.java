@@ -1,7 +1,7 @@
 package com.zzp.cci.linkedlist;
 
 
-import com.zzp.cci.datastructure.ListNode;
+import com.zzp.cci.lib.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;

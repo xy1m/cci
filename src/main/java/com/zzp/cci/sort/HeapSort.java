@@ -1,5 +1,13 @@
 package com.zzp.cci.sort;
 
+/**
+ * 是指利用堆这种数据结构所设计的一种排序算法。
+ * 堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点
+ * 最佳 O(n*lgn)
+ * 平均 O(n*lgn)
+ * 最差 O(n*lgn)
+ * 空间 O(1) in-place
+ */
 public class HeapSort {
     int[] heap;
     int size;
@@ -26,14 +34,14 @@ public class HeapSort {
 
 
     public void heapify(int i) {
-        int l = left(i);
-        int r = right(i);
+        int left = left(i);
+        int right = right(i);
         int largest = i;
-        if (l < size && heap[l] > heap[i]) {
-            largest = l;
+        if (left < size && heap[left] > heap[i]) {
+            largest = left;
         }
-        if (r < size && heap[r] > heap[largest]) {
-            largest = r;
+        if (right < size && heap[right] > heap[largest]) {
+            largest = right;
         }
         if (i != largest) {
             swap(i, largest);

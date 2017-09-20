@@ -1,4 +1,4 @@
-package com.zzp.cci.treegraph;
+package com.zzp.cci.tree;
 
 import com.zzp.cci.lib.TreeNode;
 

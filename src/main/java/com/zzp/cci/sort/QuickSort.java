@@ -1,5 +1,7 @@
 package com.zzp.cci.sort;
 
+import com.zzp.cci.util.Utils;
+
 import java.util.Random;
 
 /**
@@ -10,57 +12,47 @@ public class QuickSort {
         quickSort(arr, 0, arr.length - 1);
     }
 
-    public void quickSort(int[] arr, int l, int r) {
-        if (l < r) {
-            int pivot = partition(arr, l, r);
-            quickSort(arr, l, pivot - 1);
-            quickSort(arr, pivot + 1, r);
+    public void quickSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int pos = partition(arr, left, right);
+            quickSort(arr, left, pos - 1);
+            quickSort(arr, pos + 1, right);
         }
     }
 
-    public void swap(int[] arr, int i, int j) {
-        if (arr[i] == arr[j]) {
-            return;
-        }
-        arr[i] ^= arr[j];
-        arr[j] ^= arr[i];
-        arr[i] ^= arr[j];
-    }
-
-    public int partition(int[] arr, int l, int r) {
-        int x = arr[r];
-        int i = l - 1;
-        for (int j = l; j < r; j++) {
-            if (arr[j] <= x) {
-                swap(arr, ++i, j);
-            }
-        }
-        swap(arr, i + 1, r);
-        return i + 1;
-        /*       int i = l, j = r;
-        int x = arr[l];
-        while (i < j) {
-            while (i < j && arr[j] > x) {
-                j--;
-            }
-            if (i < j) {
-                arr[i++] = arr[j];
-            }
-            while (i < j && arr[i] <= x) {
+    public int partition(int[] arr, int left, int right) {
+        int pivot = arr[right];
+        int i = left - 1;
+        for (int j = left; j < right; j++) {
+            if (arr[j] <= pivot) {
                 i++;
-            }
-            if (i < j) {
-                arr[j--] = arr[i];
+                Utils.swap(arr, i, j);
             }
         }
-        arr[i] = x;
-        return i;*/
+        Utils.swap(arr, i + 1, right);
+        return i + 1;
+    }
+
+    public int partition2(int[] arr, int left, int right) {
+        int pivot = arr[(left + right) / 2];
+        while (left <= right) {
+            // find element on left that should be on right
+            while (arr[left] < pivot) left++;
+            // find element on right that should be on left
+            while (arr[right] > pivot) right--;
+            if (left <= right) {
+                Utils.swap(arr, left, right);
+                left++;
+                right--;
+            }
+        }
+        return left;
     }
 
     public int randomPartition(int[] arr, int l, int r) {
         Random random = new Random();
         int i = l + random.nextInt(r - l);
-        swap(arr, i, r);
+        Utils.swap(arr, i, r);
         return partition(arr, l, r);
     }
 

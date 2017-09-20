@@ -1,7 +1,7 @@
 package com.zzp.cci.linkedlist;
 
 
-import com.zzp.cci.datastructure.ListNode;
+import com.zzp.cci.lib.ListNode;
 
 /**
  * Created by zhenpeng on 8/23/17.
@@ -18,17 +18,13 @@ public class Reverse {
 
     public static ListNode reverse2(ListNode head) {
         if (head == null || head.next == null) return head;
-        ListNode pre = head;
-        ListNode cur = head.next;
-        ListNode next;
-        while (cur != null) {
-            next = cur.next;
-            cur.next = pre;
-
-            pre = cur;
-            cur = next;
+        ListNode pre = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
         }
-        head.next = null;
         return pre;
     }
 

@@ -1,6 +1,6 @@
 package com.zzp.cci.linkedlist;
 
-import com.zzp.cci.datastructure.ListNode;
+import com.zzp.cci.lib.ListNode;
 
 /**
  * Created by zhenpeng on 8/23/17.

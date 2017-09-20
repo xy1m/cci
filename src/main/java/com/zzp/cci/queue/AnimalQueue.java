@@ -1,4 +1,4 @@
-package com.zzp.cci.stackqueue;
+package com.zzp.cci.queue;
 
 
 import java.util.LinkedList;

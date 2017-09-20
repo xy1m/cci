@@ -1,4 +1,4 @@
-package com.zzp.cci.datastructure;
+package com.zzp.cci.lib;
 
 /**
  * Created by zhenpeng on 10/25/16.

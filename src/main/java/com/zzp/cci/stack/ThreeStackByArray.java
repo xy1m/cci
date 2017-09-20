@@ -1,4 +1,4 @@
-package com.zzp.cci.stackqueue;
+package com.zzp.cci.stack;
 
 import java.util.Arrays;
 
@@ -42,7 +42,7 @@ class Stack<N> {
 
     public int pop(int num) {
         if (isEmpty(num)) {
-            throw new RuntimeException("Trying to pop an empty stackqueue!");
+            throw new RuntimeException("Trying to pop an empty stack!");
         }
         int value = buffer[absTopOfStack(num)];
         // clear element
@@ -54,7 +54,7 @@ class Stack<N> {
 
     public int peek(int num) {
         if (isEmpty(num)) {
-            throw new RuntimeException("Trying to peek an empty stackqueue!");
+            throw new RuntimeException("Trying to peek an empty stack!");
         }
         return buffer[absTopOfStack(num)];
     }

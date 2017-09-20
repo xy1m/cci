@@ -1,6 +1,6 @@
 package com.zzp.cci.lib;
 
-// binary serach treegraph node
+// binary serach tree node
 public class BSTreeNode {
     public int data;
     public BSTreeNode left, right, parent;
