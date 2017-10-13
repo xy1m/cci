@@ -395,12 +395,12 @@ class Parser {
 }
 
 /**
- * @Storage is the unique data realm and keep the latest information, it contains @Map and @Counter to store data
+ * @Storage is the unique val realm and keep the latest information, it contains @Map and @Counter to store val
  * and counter information respectively, when there is any write operation, update them accordingly.
  * @TransactionManager records a series of @Transaction in a @Stack, when transaction operation executed, manipulate the
- * stack accordingly, as data operations, perform in current transaction.
- * @Transaction records the status before data operations perform, when rollback, just perform all the Undo operation in
- * the log stack.
+ * chapter3_stack_queues accordingly, as val operations, perform in current transaction.
+ * @Transaction records the status before val operations perform, when rollback, just perform all the Undo operation in
+ * the log chapter3_stack_queues.
  */
 public class SimpleDB3 {
     public static void main(String args[]) throws Exception {

@@ -1,12 +1,12 @@
 package com.zzp.cci.lib;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 public class HashMapList<T, E> {
-    private Map<T, ArrayList<E>> map = new HashMap<>();
+    private HashMap<T, ArrayList<E>> map = new HashMap<>();
 
     public void put(T key, E item) {
         if (!map.containsKey(key)) {
@@ -37,6 +37,10 @@ public class HashMapList<T, E> {
         return map.keySet();
     }
 
+    public Collection<ArrayList<E>> values() {
+        return map.values();
+    }
+
     @Override
     public String toString() {
         return map.toString();
@@ -46,11 +50,11 @@ public class HashMapList<T, E> {
         String[] strings = new String[]{"0", "1", "22", "333"};
 /*        HashMap<Integer, ArrayList<String>> mapList = new HashMap<>();
         for (String s : strings) {
-            int data = s.length();
-            if (!mapList.containsKey(data)) {
-                mapList.put(data, new ArrayList<>());
+            int val = s.length();
+            if (!mapList.containsKey(val)) {
+                mapList.put(val, new ArrayList<>());
             }
-            mapList.get(data).add(s);
+            mapList.get(val).add(s);
         }
         System.out.println(mapList);*/
         HashMapList<Integer, String> mapList = new HashMapList<>();
@@ -59,5 +63,9 @@ public class HashMapList<T, E> {
             mapList.put(key, s);
         }
         System.out.println(mapList);
+    }
+
+    public boolean equals(HashMapList item) {
+        return false;
     }
 }

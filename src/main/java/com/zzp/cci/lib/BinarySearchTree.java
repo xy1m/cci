@@ -1,21 +1,19 @@
 package com.zzp.cci.lib;
 
-import com.zzp.cci.lib.TreeNode;
-
 /**
  * Created by zhenpeng on 10/27/16.
  */
 public class BinarySearchTree {
-    // search minimum maximum successor predecessor
+    // chapter10_sorting_searching minimum maximum successor predecessor
     public TreeNode search(TreeNode x, int k) {
-        if (x == null || x.data == k) return x;
-        if (k < x.data) return search(x.left, k);
+        if (x == null || x.val == k) return x;
+        if (k < x.val) return search(x.left, k);
         else return search(x.right, k);
     }
 
     public TreeNode interativeSearch(TreeNode x, int k) {
-        while (x != null && x.data != k) {
-            if (k < x.data) {
+        while (x != null && x.val != k) {
+            if (k < x.val) {
                 x = x.left;
             } else {
                 x = x.right;
@@ -67,7 +65,7 @@ public class BinarySearchTree {
         TreeNode x = t;
         while (x != null) {
             y = x;
-            if (z.data < x.data) {
+            if (z.val < x.val) {
                 x = x.left;
             } else {
                 x = x.right;
@@ -76,7 +74,7 @@ public class BinarySearchTree {
         z.parent = y;
         if (y == null) {
             return z;
-        } else if (z.data < y.data) {
+        } else if (z.val < y.val) {
             y.left = z;
         } else {
             y.right = z;

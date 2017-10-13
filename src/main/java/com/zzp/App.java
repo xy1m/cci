@@ -1,5 +1,6 @@
 package com.zzp;
 
+import java.math.BigInteger;
 import java.util.*;
 
 /*
@@ -13,9 +14,9 @@ public class App {
     /**
      * TODO
      * unicode vs ascii
-     *
-     *
-     *
+     * <p>
+     * <p>
+     * <p>
      * BitOperation operations
      * Heap
      * PriorityQueue
@@ -24,7 +25,7 @@ public class App {
      *
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         /*Integer[] res = new Integer[]{1, 2, 3};
         List<Integer> list = Arrays.asList(res);
         list.forEach(e -> {
@@ -43,5 +44,72 @@ public class App {
             }
         }
         Collections.sort(list,Comparator.reverseOrder());*/
+        StringBuilder sb = new StringBuilder("01234567");
+        String s = "01234567";
+
+        System.out.println(sb.substring(0, 0));
+        System.out.println(s.substring(0, 1));
+
+        int[] arr = new int[3];
+
+        Arrays.sort(arr);
+
+        Arrays.fill(arr, 0);
+
+        Queue<Integer> queue = new LinkedList();
+        queue.offer(1);
+        queue.peek();
+        queue.poll();
+        queue.isEmpty();
+        queue.size();
+
+        Stack<Integer> stack = new Stack();
+        stack.push(1);
+        stack.peek();
+        stack.pop();
+        stack.isEmpty();
+        Deque<Integer> deque = new LinkedList<>();
+
+        deque.offerLast(1);
+        deque.offerLast(2);
+        deque.offerLast(3);
+        System.out.println(deque.pollLast());
+        System.out.println(deque.pollFirst());
+        System.out.println(deque.pollFirst());
+
+        Queue<Integer> q2 = new PriorityQueue();
+
+        Character character = 'c';
+        String s1 = "";
+        s.equalsIgnoreCase("");
+        Character.isAlphabetic(1);
+
+        BigInteger bigInteger = new BigInteger("0");
+        bigInteger.shiftLeft(1);
+        Integer.bitCount(1);
+        Arrays.fill(arr, 0, 1, 1);
+        "".trim();
+        Math.sqrt(1);
+        Map map = new HashMap();
+        map.put(1, 1);
+
+        StringJoiner sj1 = new StringJoiner(",", "[", "]");
+        StringJoiner sj2 = new StringJoiner(",", "[", "]");
+        sj1.add("1");
+        sj1.add("2");
+        sj1.add("3");
+        sj2.add("4");
+        sj2.add("5");
+        sj2.add("6");
+        sj1.merge(sj2);
+        System.out.println(sj1.toString());
+
+        Map.Entry<String, Integer> entry;
+        List list = new ArrayList();
+        list.add(0, 1);
+        char x = 0x0061;
+        System.out.println(x);
+
+        char[] chars = new char[5];
     }
 }

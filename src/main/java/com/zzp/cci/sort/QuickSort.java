@@ -34,18 +34,22 @@ public class QuickSort {
     }
 
     public int partition2(int[] arr, int left, int right) {
-        int pivot = arr[(left + right) / 2];
-        while (left <= right) {
-            // find element on left that should be on right
-            while (arr[left] < pivot) left++;
-            // find element on right that should be on left
-            while (arr[right] > pivot) right--;
-            if (left <= right) {
-                Utils.swap(arr, left, right);
-                left++;
+        int pivot = arr[left];
+        while (left < right) {
+            while (left < right && arr[right] >= pivot) {
                 right--;
             }
+            if (left < right) {
+                arr[left++] = arr[right];
+            }
+            while (left < right && arr[left] < pivot) {
+                left++;
+            }
+            if (left < right) {
+                arr[right--] = arr[left];
+            }
         }
+        arr[left] = pivot;
         return left;
     }
 
