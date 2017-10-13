@@ -3,10 +3,9 @@ package com.zzp.cci.chapter1_array_string;
 /**
  * Created by zhenpeng on 8/21/17.
  */
-public class Q1_9_String_Rotation {
+public class Q1_09_StringRotation {
     public boolean isRotation(String s1, String s2) {
-        int len = s1.length();
-        if (len > 0 && len == s2.length()) {
+        if (s1.length() == s2.length()) {
             String s1s1 = s1 + s1;
             return s1s1.contains(s2);
         }
@@ -16,7 +15,7 @@ public class Q1_9_String_Rotation {
     public static void main(String... args) {
         String s1 = "waterbotte";
         String s2 = "erbottewat";
-        Q1_9_String_Rotation solution = new Q1_9_String_Rotation();
-        System.out.println(solution.isRotation(s1, s2));
+        Q1_09_StringRotation app = new Q1_09_StringRotation();
+        System.out.println(app.isRotation(s1, s2));
     }
 }

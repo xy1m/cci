@@ -5,19 +5,22 @@ import java.util.Arrays;
 /**
  * Created by zhenpeng on 8/9/17.
  */
-public class Q1_1_IsUnique {
+public class Q1_01_IsUnique {
+    public final static int ASCII_SIZE = 128;
+    public final static int LOWERCASE_SIZE = 26;
+
     /**
      * Time O(n)
      * Space O(1)
      *
-     * @param str If all characters are ASCII
+     * @param str all characters are ASCII
      * @return
      */
-    public boolean isUniqueChars2(String str) {
-        if (str.length() > 128) {
+    public boolean isUniqueChars(String str) {
+        if (str.length() > ASCII_SIZE) {
             return false;
         }
-        boolean[] char_set = new boolean[128];
+        boolean[] char_set = new boolean[ASCII_SIZE];
         for (int i = 0; i < str.length(); i++) {
             int val = str.charAt(i);
             if (char_set[val] == true) {
@@ -32,11 +35,11 @@ public class Q1_1_IsUnique {
      * Time O(n)
      * Space O(1)
      *
-     * @param str If all characters between a-z
+     * @param str all characters between a-z
      * @return
      */
-    public boolean isUniqueChars(String str) {
-        if (str.length() > 26) {
+    public boolean isUniqueCharsBit(String str) {
+        if (str.length() > LOWERCASE_SIZE) {
             return false;
         }
         int checker = 0;
@@ -69,8 +72,8 @@ public class Q1_1_IsUnique {
     }
 
     /**
-     * Time O(nlog(n))
-     * Space depend on the sort alogrithm
+     * Time O(n*log(n))
+     * Space depend on the sort algorithm
      *
      * @param str
      * @return
@@ -88,10 +91,10 @@ public class Q1_1_IsUnique {
     }
 
     public static void main(String[] args) {
-        String input = "abcdefg";
-        Q1_1_IsUnique app = new Q1_1_IsUnique();
+        String input = "Hello World";
+        Q1_01_IsUnique app = new Q1_01_IsUnique();
         System.out.println(app.isUniqueChars(input));
-        System.out.println(app.isUniqueChars2(input));
+        System.out.println(app.isUniqueCharsBit(input));
         System.out.println(app.isUniqueCharsBruteForce(input));
         System.out.println(app.isUniqueCharsSort(input));
     }

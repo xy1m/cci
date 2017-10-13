@@ -6,7 +6,7 @@ import com.zzp.cci.lib.ListNode;
 /**
  * Created by zhenpeng on 8/22/17.
  */
-public class FindLastK {
+public class Q2_2_ReturnKthToLast {
     // recursion
     public static int nthToLast(ListNode head, int k) {
         if (head == null) {

@@ -5,7 +5,9 @@ import java.util.Arrays;
 /**
  * Created by zhenpeng on 8/9/17.
  */
-public class Q1_2_Check_Permutation {
+public class Q1_02_CheckPermutation {
+    public final static int ASCII_SIZE = 128;
+
     public String sort(String s) {
         char[] arr = s.toCharArray();
         Arrays.sort(arr);
@@ -13,8 +15,10 @@ public class Q1_2_Check_Permutation {
     }
 
     /**
-     * Sort two string then compare
-     * include space and distinguish case
+     * Sort two string then compare, including space and distinguish case
+     *
+     * Time: O(n*log(n))
+     * Space: Depend on the sorting algorithm
      *
      * @param s
      * @param t
@@ -28,8 +32,10 @@ public class Q1_2_Check_Permutation {
     }
 
     /**
-     * Calculate occurrence of every characters
-     * Assume characters are ASCII
+     * Calculate occurrence of every characters, assume characters are ASCII
+     *
+     * Time: O(n)
+     * Space: O(n)
      *
      * @param s
      * @param t
@@ -39,7 +45,7 @@ public class Q1_2_Check_Permutation {
         if (s.length() != t.length()) {
             return false;
         }
-        int[] letters = new int[128];
+        int[] letters = new int[ASCII_SIZE];
         char[] arr = s.toCharArray();
         for (char c : arr) {
             letters[c]++;
@@ -56,7 +62,7 @@ public class Q1_2_Check_Permutation {
     public static void main(String[] args) {
         String s = " dog";
         String t = "god ";
-        Q1_2_Check_Permutation app = new Q1_2_Check_Permutation();
+        Q1_02_CheckPermutation app = new Q1_02_CheckPermutation();
         System.out.println(app.isPermutation(s, t));
         System.out.println(app.isPermutation2(s, t));
     }

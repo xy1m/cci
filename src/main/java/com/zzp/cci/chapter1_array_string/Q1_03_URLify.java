@@ -3,8 +3,16 @@ package com.zzp.cci.chapter1_array_string;
 /**
  * Created by zhenpeng on 8/9/17.
  */
-public class Q1_3_URLify {
+public class Q1_03_URLify {
 
+    /**
+     * Time: O(n)
+     * Space: O(n)
+     *
+     * @param str
+     * @param length
+     * @return
+     */
     public char[] replaceSpaces(char[] str, int length) {
         int spaceCount = 0, newLength, i;
         for (i = 0; i < length; i++) {
@@ -30,10 +38,9 @@ public class Q1_3_URLify {
     }
 
     public static void main(String[] args) {
-        Q1_3_URLify app = new Q1_3_URLify();
-        String input = "Hello World   My baby";
+        Q1_03_URLify app = new Q1_03_URLify();
+        String input = "Hello World  Apple   Google";
         char[] arr = input.toCharArray();
-        int length = input.length();
-        System.out.println(new String(app.replaceSpaces(arr, length)));
+        System.out.println(new String(app.replaceSpaces(arr, input.length())));
     }
 }

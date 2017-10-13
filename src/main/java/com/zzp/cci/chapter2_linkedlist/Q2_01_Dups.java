@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * Created by zhenpeng on 8/22/17.
  */
-public class DeleteDups {
+public class Q2_01_Dups {
     // hash solution
     public static void deleteDups(ListNode head) {
         Set<Integer> set = new HashSet<>();
