@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter1_array_string;
+package com.zzp.cci.chapter01_array_string;
 
 import java.util.Arrays;
 
@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Q1_02_CheckPermutation {
     public final static int ASCII_SIZE = 128;
 
-    public String sort(String s) {
+    public static String sort(String s) {
         char[] arr = s.toCharArray();
         Arrays.sort(arr);
         return new String(arr);
@@ -16,7 +16,7 @@ public class Q1_02_CheckPermutation {
 
     /**
      * Sort two string then compare, including space and distinguish case
-     *
+     * <p>
      * Time: O(n*log(n))
      * Space: Depend on the sorting algorithm
      *
@@ -24,7 +24,7 @@ public class Q1_02_CheckPermutation {
      * @param t
      * @return
      */
-    public boolean isPermutation(String s, String t) {
+    public static boolean isPermutation(String s, String t) {
         if (s.length() != t.length()) {
             return false;
         }
@@ -33,7 +33,7 @@ public class Q1_02_CheckPermutation {
 
     /**
      * Calculate occurrence of every characters, assume characters are ASCII
-     *
+     * <p>
      * Time: O(n)
      * Space: O(n)
      *
@@ -41,7 +41,7 @@ public class Q1_02_CheckPermutation {
      * @param t
      * @return
      */
-    public boolean isPermutation2(String s, String t) {
+    public static boolean isPermutation2(String s, String t) {
         if (s.length() != t.length()) {
             return false;
         }
@@ -62,8 +62,7 @@ public class Q1_02_CheckPermutation {
     public static void main(String[] args) {
         String s = " dog";
         String t = "god ";
-        Q1_02_CheckPermutation app = new Q1_02_CheckPermutation();
-        System.out.println(app.isPermutation(s, t));
-        System.out.println(app.isPermutation2(s, t));
+        System.out.println(isPermutation(s, t));
+        System.out.println(isPermutation2(s, t));
     }
 }

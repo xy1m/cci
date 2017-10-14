@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter2_linkedlist;
+package com.zzp.cci.chapter02_linkedlist;
 
 
 import com.zzp.cci.lib.ListNode;
@@ -6,28 +6,28 @@ import com.zzp.cci.lib.ListNode;
 /**
  * Created by zhenpeng on 8/23/17.
  */
-public class FindLoopBeginning {
+public class Q2_08_LoopDetection {
 
     public static ListNode findBeginning(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
+        ListNode p1 = head;
+        ListNode p2 = head;
         // LOOP_SIZE-k
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-            if (slow == fast) {
+        while (p2 != null && p2.next != null) {
+            p1 = p1.next;
+            p2 = p2.next.next;
+            if (p1 == p2) {
                 break;
             }
         }
-        if (fast == null || fast.next == null) {
+        if (p2 == null || p2.next == null) {
             return null;
         }
-        slow = head;
-        while (slow != fast) {
-            slow = slow.next;
-            fast = fast.next;
+        p1 = head;
+        while (p1 != p2) {
+            p1 = p1.next;
+            p2 = p2.next;
         }
-        return fast;
+        return p2;
     }
 
     public static void main(String... args) {

@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter2_linkedlist;
+package com.zzp.cci.chapter02_linkedlist;
 
 
 import com.zzp.cci.lib.ListNode;
@@ -6,7 +6,7 @@ import com.zzp.cci.lib.ListNode;
 /**
  * Created by zhenpeng on 8/22/17.
  */
-public class PartitionX {
+public class Q2_04_PartitionX {
     public static ListNode partition(ListNode head, int x) {
         if (head == null || head.next == null) return head;
         ListNode beforeStart = null;

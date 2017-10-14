@@ -1,11 +1,11 @@
-package com.zzp.cci.chapter1_array_string;
+package com.zzp.cci.chapter01_array_string;
 
 /**
  * Created by zhenpeng on 8/9/17.
  */
 public class Q1_07_RotateMatrix {
 
-    public void rotate(int[][] matrix, int n) {
+    public static void rotate(int[][] matrix, int n) {
         for (int layer = 0; layer < n / 2; layer++) {
             int first = layer;
             int last = n - 1 - layer;
@@ -28,9 +28,7 @@ public class Q1_07_RotateMatrix {
                 {9, 10, 11, 12},
                 {13, 14, 15, 16}
         };
-
-        Q1_07_RotateMatrix app = new Q1_07_RotateMatrix();
-        app.rotate(matrix, 4);
+        rotate(matrix, 4);
         print(matrix);
     }
 

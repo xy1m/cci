@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter2_linkedlist;
+package com.zzp.cci.chapter02_linkedlist;
 
 
 import com.zzp.cci.lib.ListNode;
@@ -6,7 +6,11 @@ import com.zzp.cci.lib.ListNode;
 /**
  * Created by zhenpeng on 8/22/17.
  */
-public class Q2_2_ReturnKthToLast {
+public class Q2_02_ReturnKthToLast {
+    static class IntWrapper {
+        int value = 0;
+    }
+
     // recursion
     public static int nthToLast(ListNode head, int k) {
         if (head == null) {
@@ -21,7 +25,7 @@ public class Q2_2_ReturnKthToLast {
 
     // IntWrapper
     public static ListNode nthToLastWrapper(ListNode head, int k, IntWrapper i) {
-        if (head == null) {
+        if (head == null || k < 1) {
             return null;
         }
         ListNode node = nthToLastWrapper(head.next, k, i);
@@ -33,27 +37,28 @@ public class Q2_2_ReturnKthToLast {
     }
 
     // runner
-    public static int nthToLastRunner(ListNode head, int k) {
+    public static ListNode nthToLastRunner(ListNode head, int k) {
+        // k>=1 and k<=size;
+        if (k < 1) return null;
         ListNode p2 = head;
         ListNode p1 = head;
         for (int i = 0; i < k; i++) {
+            // k>size
+            if (p2 == null) return null;
             p2 = p2.next;
         }
         while (p2 != null) {
             p2 = p2.next;
             p1 = p1.next;
         }
-        return p1.data;
+        return p1;
     }
 
     public static void main(String... args) {
-        ListNode nodes = ListNode.from(new int[]{1, 2, 3, 4, 5, 6, 8, 8, 3, 4, 2, 3});
-        nthToLast(nodes, 3);
-        System.out.println(nthToLastWrapper(nodes, 3, new IntWrapper()).data);
-        System.out.println(nthToLastRunner(nodes, 3));
+        ListNode nodes = ListNode.from(1, 2, 3, 4, 5);
+        nthToLast(nodes, 2);
+        System.out.println(nthToLastWrapper(nodes, 2, new IntWrapper()));
+        System.out.println(nthToLastRunner(nodes, 2));
     }
 }
 
-class IntWrapper {
-    int value = 0;
-}

@@ -13,7 +13,7 @@ import java.util.List;
 public class Q4_4_CheckBST {
 
     /**
-     * Solution 1, copy elements to chapter1_array_string and check if sorted, only works if there is no duplicate elements
+     * Solution 1, copy elements to chapter01_array_string and check if sorted, only works if there is no duplicate elements
      *
      * @param root
      * @return

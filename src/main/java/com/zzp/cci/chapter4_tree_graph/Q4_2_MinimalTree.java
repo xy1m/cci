@@ -4,7 +4,7 @@ import com.zzp.cci.lib.TreeNode;
 
 /**
  * Minimal Tree:
- * Given a sorted (increasing order) chapter1_array_string with unique integer elements, write an algorithm to create a binary chapter10_sorting_searching
+ * Given a sorted (increasing order) chapter01_array_string with unique integer elements, write an algorithm to create a binary chapter10_sorting_searching
  * tree with minimal height.
  */
 public class Q4_2_MinimalTree {

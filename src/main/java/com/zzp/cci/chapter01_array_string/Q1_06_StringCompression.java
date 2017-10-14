@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter1_array_string;
+package com.zzp.cci.chapter01_array_string;
 
 /**
  * Created by zhenpeng on 8/9/17.
@@ -10,7 +10,7 @@ public class Q1_06_StringCompression {
      * @param str
      * @return
      */
-    public String compressBad(String str) {
+    public static String compressBad(String str) {
         StringBuilder compressed = new StringBuilder();
         char last = str.charAt(0);
         int count = 1;
@@ -25,13 +25,14 @@ public class Q1_06_StringCompression {
         }
         return compressed.append(last).append(count).toString();
     }
+
     /**
      * Calculate str length after compression
      *
      * @param str
      * @return
      */
-    public int countCompression(String str) {
+    public static int countCompression(String str) {
         if (str == null || str.length() == 0) {
             return 0;
         }
@@ -57,7 +58,7 @@ public class Q1_06_StringCompression {
      * @param str
      * @return
      */
-    public String compressBetter(String str) {
+    public static String compressBetter(String str) {
         int size = countCompression(str);
         if (size >= str.length()) {
             return str;
@@ -77,7 +78,7 @@ public class Q1_06_StringCompression {
         return compressed.append(last).append(count).toString();
     }
 
-    public String compressAlternate(String str) {
+    public static String compressAlternate(String str) {
         int size = countCompression(str);
         if (size >= str.length()) {
             return str;
@@ -99,7 +100,7 @@ public class Q1_06_StringCompression {
         return new String(arr);
     }
 
-    public int setChar(char[] arr, int index, char last, int count) {
+    public static int setChar(char[] arr, int index, char last, int count) {
         arr[index++] = last;
         char[] cnt = String.valueOf(count).toCharArray();
         for (char x : cnt) {
@@ -110,9 +111,8 @@ public class Q1_06_StringCompression {
 
     public static void main(String[] args) {
         String input = "aabcccccaaa";
-        Q1_06_StringCompression app = new Q1_06_StringCompression();
-        System.out.println(app.compressBad(input));
-        System.out.println(app.compressBetter(input));
-        System.out.println(app.compressAlternate(input));
+        System.out.println(compressBad(input));
+        System.out.println(compressBetter(input));
+        System.out.println(compressAlternate(input));
     }
 }

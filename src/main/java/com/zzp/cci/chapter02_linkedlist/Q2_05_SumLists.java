@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter2_linkedlist;
+package com.zzp.cci.chapter02_linkedlist;
 
 
 import com.zzp.cci.lib.ListNode;
@@ -6,7 +6,12 @@ import com.zzp.cci.lib.ListNode;
 /**
  * Created by zhenpeng on 8/22/17.
  */
-public class AddLists {
+public class Q2_05_SumLists {
+    static class PartialSum {
+        public ListNode sum = null;
+        public int carry = 0;
+    }
+
     public static ListNode addLists(ListNode l1, ListNode l2, int carry) {
         if (l1 == null && l2 == null && carry == 0) {
             return null;
@@ -24,8 +29,8 @@ public class AddLists {
     }
 
     public static ListNode addListsReverse(ListNode l1, ListNode l2) {
-        int len1 = length(l1);
-        int len2 = length(l2);
+        int len1 = l1.length();
+        int len2 = l2.length();
 
         if (len1 < len2) {
             l1 = padList(l1, len2 - len1);
@@ -41,23 +46,13 @@ public class AddLists {
         }
     }
 
-    public static int length(ListNode head) {
-        int len = 0;
-        while (head != null) {
-            head = head.next;
-            len++;
-        }
-        return len;
-    }
-
     public static ListNode padList(ListNode head, int padding) {
-        ListNode res = head;
         for (int i = 0; i < padding; i++) {
             ListNode node = new ListNode(0);
-            node.next = res;
-            res = node;
+            node.next = head;
+            head = node;
         }
-        return res;
+        return head;
     }
 
     public static ListNode insertBefore(ListNode head, int val) {
@@ -83,14 +78,11 @@ public class AddLists {
         ListNode l2 = ListNode.from(new int[]{5, 9, 2});
 
         ListNode sum = addLists(l1, l2, 0);
-        System.out.println(sum);
+        sum.print();
 
         ListNode sum1 = addListsReverse(l1, l2);
-        System.out.println(sum1);
+        sum1.print();
     }
 }
 
-class PartialSum {
-    public ListNode sum = null;
-    public int carry = 0;
-}
+

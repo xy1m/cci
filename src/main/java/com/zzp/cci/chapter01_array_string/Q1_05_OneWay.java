@@ -1,8 +1,8 @@
-package com.zzp.cci.chapter1_array_string;
+package com.zzp.cci.chapter01_array_string;
 
 public class Q1_05_OneWay {
 
-    boolean oneEditAway(String first, String second) {
+    public static boolean oneEditAway(String first, String second) {
         if (first.length() == second.length()) {
             return oneReplaceAway(first, second);
         } else if (first.length() + 1 == second.length()) {
@@ -13,7 +13,7 @@ public class Q1_05_OneWay {
         return true;
     }
 
-    boolean oneReplaceAway(String w1, String w2) {
+    public static boolean oneReplaceAway(String w1, String w2) {
         boolean foundDiff = false;
         for (int i = 0; i < w1.length(); i++) {
             if (w1.charAt(i) != w2.charAt(i)) {
@@ -24,7 +24,7 @@ public class Q1_05_OneWay {
         return true;
     }
 
-    boolean oneInsertAway(String w1, String w2) {
+    public static boolean oneInsertAway(String w1, String w2) {
         int index1 = 0, index2 = 0;
         while (index1 < w1.length() && index2 < w2.length()) {
             if (w1.charAt(index1) != w2.charAt(index2)) {
@@ -38,7 +38,7 @@ public class Q1_05_OneWay {
         return true;
     }
 
-    boolean oneEditAway2(String first, String second) {
+    public static boolean oneEditAway2(String first, String second) {
         if (Math.abs(first.length() - second.length()) > 1) return false;
         String s1 = first.length() < second.length() ? first : second;
         String s2 = first.length() < second.length() ? second : first;
@@ -61,14 +61,13 @@ public class Q1_05_OneWay {
     }
 
     public static void main(String[] args) {
-        Q1_05_OneWay app = new Q1_05_OneWay();
-        System.out.println(app.oneEditAway("apple", "aple"));
-        System.out.println(app.oneEditAway("apple", "axple"));
-        System.out.println(app.oneEditAway("aple", "apple"));
+        System.out.println(oneEditAway("apple", "aple"));
+        System.out.println(oneEditAway("apple", "axple"));
+        System.out.println(oneEditAway("aple", "apple"));
 
-        System.out.println(app.oneEditAway2("apple", "aple"));
-        System.out.println(app.oneEditAway2("apple", "axple"));
-        System.out.println(app.oneEditAway2("aple", "apple"));
+        System.out.println(oneEditAway2("apple", "aple"));
+        System.out.println(oneEditAway2("apple", "axple"));
+        System.out.println(oneEditAway2("aple", "apple"));
 
     }
 }

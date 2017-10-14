@@ -5,14 +5,14 @@ package com.zzp.cci.sort;
  */
 public class RadixSort {
     public void radixSort(int[] arr) {
-        // use stable sort to sort chapter1_array_string arr on digit i
+        // use stable sort to sort chapter01_array_string arr on digit i
         for (int i = 0; i < 3; i++) {
             countingSort(arr, i, 10);
         }
     }
 
     public void countingSort(int[] arr, int i, int k) {
-        // use stable sort to sort chapter1_array_string arr on digit i
+        // use stable sort to sort chapter01_array_string arr on digit i
         int[] output = new int[arr.length];
         int[] counter = new int[k];
         for (int j = 0; j < arr.length; j++) {

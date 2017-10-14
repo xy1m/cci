@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter1_array_string;
+package com.zzp.cci.chapter01_array_string;
 
 import java.util.Arrays;
 
@@ -16,7 +16,7 @@ public class Q1_01_IsUnique {
      * @param str all characters are ASCII
      * @return
      */
-    public boolean isUniqueChars(String str) {
+    public static boolean isUniqueChars(String str) {
         if (str.length() > ASCII_SIZE) {
             return false;
         }
@@ -38,7 +38,7 @@ public class Q1_01_IsUnique {
      * @param str all characters between a-z
      * @return
      */
-    public boolean isUniqueCharsBit(String str) {
+    public static boolean isUniqueCharsBit(String str) {
         if (str.length() > LOWERCASE_SIZE) {
             return false;
         }
@@ -60,7 +60,7 @@ public class Q1_01_IsUnique {
      * @param str
      * @return
      */
-    public boolean isUniqueCharsBruteForce(String str) {
+    public static boolean isUniqueCharsBruteForce(String str) {
         for (int i = 0; i < str.length(); i++) {
             for (int j = i + 1; j < str.length(); j++) {
                 if (str.charAt(i) == str.charAt(j)) {
@@ -78,7 +78,7 @@ public class Q1_01_IsUnique {
      * @param str
      * @return
      */
-    public boolean isUniqueCharsSort(String str) {
+    public static boolean isUniqueCharsSort(String str) {
         char[] arr = str.toCharArray();
         // quick sort nlog(n)
         Arrays.sort(arr);
@@ -92,10 +92,9 @@ public class Q1_01_IsUnique {
 
     public static void main(String[] args) {
         String input = "Hello World";
-        Q1_01_IsUnique app = new Q1_01_IsUnique();
-        System.out.println(app.isUniqueChars(input));
-        System.out.println(app.isUniqueCharsBit(input));
-        System.out.println(app.isUniqueCharsBruteForce(input));
-        System.out.println(app.isUniqueCharsSort(input));
+        System.out.println(isUniqueChars(input));
+        System.out.println(isUniqueCharsBit(input));
+        System.out.println(isUniqueCharsBruteForce(input));
+        System.out.println(isUniqueCharsSort(input));
     }
 }

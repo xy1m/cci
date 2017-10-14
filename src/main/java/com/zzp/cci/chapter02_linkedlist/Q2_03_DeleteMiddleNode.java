@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter2_linkedlist;
+package com.zzp.cci.chapter02_linkedlist;
 
 
 import com.zzp.cci.lib.ListNode;
@@ -6,7 +6,7 @@ import com.zzp.cci.lib.ListNode;
 /**
  * Created by zhenpeng on 8/22/17.
  */
-public class DeleteNode {
+public class Q2_03_DeleteMiddleNode {
     public static boolean deleteNode(ListNode head) {
         if (head == null || head.next == null) {
             return false;
@@ -17,12 +17,11 @@ public class DeleteNode {
     }
 
     public static void main(String... args) {
-        ListNode nodes = ListNode.from(new int[]{1, 2, 3, 4, 5, 6, 8, 8, 3, 4, 2, 3});
+        ListNode nodes = ListNode.from(1, 2, 3, 4);
         ListNode head = new ListNode(0);
         head.next = nodes;
-
         deleteNode(nodes);
-        System.out.println(head);
+        head.print();
     }
 
 }

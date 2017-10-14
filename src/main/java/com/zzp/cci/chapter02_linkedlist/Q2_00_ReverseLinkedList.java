@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter2_linkedlist;
+package com.zzp.cci.chapter02_linkedlist;
 
 
 import com.zzp.cci.lib.ListNode;
@@ -6,7 +6,7 @@ import com.zzp.cci.lib.ListNode;
 /**
  * Created by zhenpeng on 8/23/17.
  */
-public class Reverse {
+public class Q2_00_ReverseLinkedList {
 
     public static ListNode reverse1(ListNode head) {
         if (head == null || head.next == null) return head;
@@ -29,9 +29,9 @@ public class Reverse {
     }
 
     public static void main(String... args) {
-        ListNode nodes1 = ListNode.from(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
-        ListNode nodes2 = ListNode.from(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
-        System.out.println(reverse1(nodes1));
-        System.out.println(reverse2(nodes2));
+        ListNode nodes1 = ListNode.from(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        ListNode nodes2 = ListNode.from(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        reverse1(nodes1).print();
+        reverse2(nodes2).print();
     }
 }

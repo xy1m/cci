@@ -1,5 +1,7 @@
 package com.zzp.cci.lib;
 
+import java.util.StringJoiner;
+
 /**
  * Created by zhenpeng on 8/22/17.
  */
@@ -11,38 +13,54 @@ public class ListNode {
         this.data = data;
     }
 
-    public static ListNode from(int[] source) {
-        if (source == null || source.length == 0) {
+    public void append(ListNode node) {
+        ListNode n = this;
+        while (n.next != null) {
+            n = n.next;
+        }
+        n.next = node;
+    }
+
+    public static ListNode from(int... source) {
+        if (source.length == 0) {
             return null;
         }
-        ListNode head = new ListNode(source[0]);
-        ListNode node = head;
-        for (int i = 1; i < source.length; i++) {
-            ListNode cur = new ListNode(source[i]);
-            node.next = cur;
-            node = cur;
+        ListNode head = null;
+        ListNode n = null;
+        for (int d : source) {
+            if (n == null) {
+                head = new ListNode(d);
+                n = head;
+            } else {
+                ListNode node = new ListNode(d);
+                n.next = node;
+                n = node;
+            }
         }
         return head;
     }
 
     public int length() {
-        ListNode cur = this;
-        int length = 0;
-        while (cur != null) {
-            length++;
-            cur = cur.next;
+        ListNode n = this;
+        int len = 0;
+        while (n != null) {
+            n = n.next;
+            len++;
         }
-        return length;
+        return len;
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        ListNode head = this;
-        while (head.next != null) {
-            sb.append(head.data).append("->");
-            head = head.next;
+        StringJoiner joiner = new StringJoiner("->");
+        ListNode n = this;
+        while (n != null) {
+            joiner.add(String.valueOf(n.data));
+            n = n.next;
         }
-        sb.append(head.data);
-        return sb.toString();
+        return joiner.toString();
+    }
+
+    public void print() {
+        System.out.println(this);
     }
 }

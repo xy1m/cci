@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter1_array_string;
+package com.zzp.cci.chapter01_array_string;
 
 public class Q1_04_PalindromePermutation {
     public final static int LOWERCASE_SIZE = 26;
@@ -9,7 +9,7 @@ public class Q1_04_PalindromePermutation {
      * @param str
      * @return
      */
-    public boolean isPalindromePermutation(String str) {
+    public static boolean isPalindromePermutation(String str) {
         int[] freq = new int[LOWERCASE_SIZE];
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
@@ -29,7 +29,7 @@ public class Q1_04_PalindromePermutation {
         return true;
     }
 
-    public boolean isPalindromePermutationOneLoop(String str) {
+    public static boolean isPalindromePermutationOneLoop(String str) {
         int[] freq = new int[LOWERCASE_SIZE];
         int oddCount = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -47,7 +47,7 @@ public class Q1_04_PalindromePermutation {
         return oddCount < 2;
     }
 
-    public boolean isPalindromePermutationBit(String str) {
+    public static boolean isPalindromePermutationBit(String str) {
         int checker = 0;
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
@@ -60,10 +60,9 @@ public class Q1_04_PalindromePermutation {
     }
 
     public static void main(String[] args) {
-        Q1_04_PalindromePermutation app = new Q1_04_PalindromePermutation();
-        System.out.println(app.isPalindromePermutation("Tact Coa"));
-        System.out.println(app.isPalindromePermutationOneLoop("Tact Coa"));
-        System.out.println(app.isPalindromePermutationBit("Tact Coa"));
-        System.out.println(app.isPalindromePermutationBit("Tact Coa"));
+        System.out.println(isPalindromePermutation("Tact Coa"));
+        System.out.println(isPalindromePermutationOneLoop("Tact Coa"));
+        System.out.println(isPalindromePermutationBit("Tact Coa"));
+        System.out.println(isPalindromePermutationBit("Tact Coa"));
     }
 }

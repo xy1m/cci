@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter1_array_string;
+package com.zzp.cci.chapter01_array_string;
 
 /**
  * Created by zhenpeng on 8/21/17.
@@ -10,7 +10,7 @@ public class Q1_08_ZeroMatrix {
      *
      * @param matrix
      */
-    public void setZeros(int[][] matrix) {
+    public static void setZeros(int[][] matrix) {
         boolean[] row = new boolean[matrix.length];
         boolean[] col = new boolean[matrix[0].length];
         for (int i = 0; i < matrix.length; i++) {
@@ -36,7 +36,7 @@ public class Q1_08_ZeroMatrix {
      *
      * @param matrix
      */
-    public void setZerosInPlace(int[][] matrix) {
+    public static void setZerosInPlace(int[][] matrix) {
         boolean firstRowHasZero = false;
         boolean firstColHasZero = false;
 
@@ -81,13 +81,13 @@ public class Q1_08_ZeroMatrix {
         }
     }
 
-    public void setRowZeros(int[][] matrix, int row) {
+    public static void setRowZeros(int[][] matrix, int row) {
         for (int i = 0; i < matrix[0].length; i++) {
             matrix[row][i] = 0;
         }
     }
 
-    public void setColZeros(int[][] matrix, int col) {
+    public static void setColZeros(int[][] matrix, int col) {
         for (int i = 0; i < matrix.length; i++) {
             matrix[i][col] = 0;
         }
@@ -100,12 +100,11 @@ public class Q1_08_ZeroMatrix {
                 {3, 5, 0, 1},
                 {1, 2, 4, 5}
         };
-        Q1_08_ZeroMatrix app = new Q1_08_ZeroMatrix();
-        app.setZeros(matrix);
-        print(matrix);
-
-        //app.setZerosInPlace(matrix);
+        //setZeros(matrix);
         //print(matrix);
+
+        setZerosInPlace(matrix);
+        print(matrix);
     }
 
     public static void print(int[][] matrix) {
