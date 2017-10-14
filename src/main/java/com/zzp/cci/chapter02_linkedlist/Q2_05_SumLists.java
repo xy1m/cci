@@ -6,11 +6,11 @@ import com.zzp.cci.lib.ListNode;
 /**
  * Created by zhenpeng on 8/22/17.
  */
+class PartialSum {
+    public ListNode sum = null;
+    public int carry = 0;
+}
 public class Q2_05_SumLists {
-    static class PartialSum {
-        public ListNode sum = null;
-        public int carry = 0;
-    }
 
     public static ListNode addLists(ListNode l1, ListNode l2, int carry) {
         if (l1 == null && l2 == null && carry == 0) {

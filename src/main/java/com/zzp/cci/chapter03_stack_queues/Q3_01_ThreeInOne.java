@@ -1,6 +1,6 @@
-package com.zzp.cci.chapter3_stack_queues;
+package com.zzp.cci.chapter03_stack_queues;
 
-public class FixedMultiStack {
+class FixedMultiStack {
     private int numberOfStacks;
     private int stackCapacity;
     private int[] values;
@@ -14,13 +14,13 @@ public class FixedMultiStack {
     }
 
     public void push(int num, int value) {
-        if (isFull(num)) throw new RuntimeException("chapter3_stack_queues overflow");
+        if (isFull(num)) throw new RuntimeException("chapter03_stack_queues overflow");
         sizes[num]++;
         values[indexOfTop(num)] = value;
     }
 
     public int pop(int num) {
-        if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty chapter3_stack_queues");
+        if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty chapter03_stack_queues");
         int item = values[indexOfTop(num)];
         // clear element;
         values[indexOfTop(num)] = 0;
@@ -29,7 +29,7 @@ public class FixedMultiStack {
     }
 
     public int peek(int num) {
-        if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty chapter3_stack_queues");
+        if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty chapter03_stack_queues");
         return values[indexOfTop(num)];
     }
 
@@ -44,7 +44,13 @@ public class FixedMultiStack {
     private int indexOfTop(int num) {
         return stackCapacity * num + sizes[num] - 1;
     }
+}
 
+class MultiStack {
+    //TODO
+}
+
+public class Q3_01_ThreeInOne {
     public static void main(String[] args) {
         FixedMultiStack fixedMultiStack = new FixedMultiStack(3, 3);
         fixedMultiStack.push(0, 1);
@@ -73,3 +79,4 @@ public class FixedMultiStack {
 
     }
 }
+

@@ -7,17 +7,17 @@ import java.util.Stack;
 /**
  * Created by zhenpeng on 8/23/17.
  */
-public class Q2_06_Palindrome {
-    static class Result {
-        public ListNode node;
-        public boolean result;
+class Result {
+    public ListNode node;
+    public boolean result;
 
-        public Result(ListNode node, boolean result) {
-            this.node = node;
-            this.result = result;
-        }
+    public Result(ListNode node, boolean result) {
+        this.node = node;
+        this.result = result;
     }
+}
 
+public class Q2_06_Palindrome {
     // Reverse and compare
     public static boolean isPalindromeReverse(ListNode node) {
         ListNode reversed = reverseAndClone(node);

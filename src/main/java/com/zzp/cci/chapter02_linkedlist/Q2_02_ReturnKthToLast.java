@@ -7,9 +7,6 @@ import com.zzp.cci.lib.ListNode;
  * Created by zhenpeng on 8/22/17.
  */
 public class Q2_02_ReturnKthToLast {
-    static class IntWrapper {
-        int value = 0;
-    }
 
     // recursion
     public static int nthToLast(ListNode head, int k) {
@@ -62,3 +59,6 @@ public class Q2_02_ReturnKthToLast {
     }
 }
 
+class IntWrapper {
+    int value = 0;
+}
