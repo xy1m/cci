@@ -13,14 +13,6 @@ public class ListNode {
         this.data = data;
     }
 
-    public void append(ListNode node) {
-        ListNode n = this;
-        while (n.next != null) {
-            n = n.next;
-        }
-        n.next = node;
-    }
-
     public static ListNode from(int... source) {
         if (source.length == 0) {
             return null;
@@ -38,6 +30,14 @@ public class ListNode {
             }
         }
         return head;
+    }
+
+    public void append(ListNode node) {
+        ListNode n = this;
+        while (n.next != null) {
+            n = n.next;
+        }
+        n.next = node;
     }
 
     public int length() {

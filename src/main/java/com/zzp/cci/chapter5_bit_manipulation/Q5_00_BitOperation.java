@@ -1,6 +1,6 @@
 package com.zzp.cci.chapter5_bit_manipulation;
 
-public class BitOperation {
+public class Q5_00_BitOperation {
 
     /**
      * 获取第i位是否位1，i从0开始
@@ -147,9 +147,9 @@ public class BitOperation {
 
 
     public static void main(String[] args) {
-        BitOperation bitOperation = new BitOperation();
-        System.out.println(bitOperation.insertion(65, 10, 1, 5));
-        System.out.println(bitOperation.numberOfBitsConvertion(15, 0));
-        System.out.println(bitOperation.pairwiseSwap(15));
+        Q5_00_BitOperation q500BitOperation = new Q5_00_BitOperation();
+        System.out.println(q500BitOperation.insertion(65, 10, 1, 5));
+        System.out.println(q500BitOperation.numberOfBitsConvertion(15, 0));
+        System.out.println(q500BitOperation.pairwiseSwap(15));
     }
 }

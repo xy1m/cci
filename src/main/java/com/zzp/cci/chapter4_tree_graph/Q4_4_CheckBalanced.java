@@ -2,10 +2,9 @@ package com.zzp.cci.chapter4_tree_graph;
 
 import com.zzp.cci.lib.TreeNode;
 
-public class Q4_5_CheckBalanced {
+public class Q4_4_CheckBalanced {
 
     // Solution 1 check diff of left height and right height
-
     public static boolean isBalanced(TreeNode root) {
         if (root == null) return true;
         int left = height(root.left);
@@ -32,5 +31,15 @@ public class Q4_5_CheckBalanced {
         if (right == Integer.MIN_VALUE) return Integer.MIN_VALUE;
         if (Math.abs(left - right) > 1) return Integer.MIN_VALUE;
         return Math.max(left, right) + 1;
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3);
+        root.insertInOrder(1);
+        root.insertInOrder(2);
+        root.insertInOrder(4);
+        root.insertInOrder(5);
+        System.out.println(isBalanced(root));
+        System.out.println(isBalancedAdvanced(root));
     }
 }

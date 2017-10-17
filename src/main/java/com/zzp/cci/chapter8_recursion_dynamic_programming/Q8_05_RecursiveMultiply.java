@@ -1,14 +1,14 @@
 package com.zzp.cci.chapter8_recursion_dynamic_programming;
 
-public class Q8_5_RecursiveMultiply {
+public class Q8_05_RecursiveMultiply {
 
-    int minProduct(int a, int b) {
+    static int minProduct(int a, int b) {
         int small = a < b ? a : b;
         int big = a < b ? b : a;
         return minProductHelper(small, big);
     }
 
-    int minProductHelper(int small, int big) {
+    static int minProductHelper(int small, int big) {
         if (small == 0) return 0;
         if (small == 1) return big;
         int s = small >> 1;
@@ -21,14 +21,14 @@ public class Q8_5_RecursiveMultiply {
         return side1 + side2;
     }
 
-    int minProductMemo(int a, int b) {
+    static int minProductMemo(int a, int b) {
         int small = a < b ? a : b;
         int big = a < b ? b : a;
         int[] memo = new int[small + 1];
         return minProductMemoHelper(small, big, memo);
     }
 
-    int minProductMemoHelper(int small, int big, int[] memo) {
+    static int minProductMemoHelper(int small, int big, int[] memo) {
         if (small == 0) return 0;
         if (small == 1) return big;
         if (memo[small] > 0) return memo[small];
@@ -44,13 +44,13 @@ public class Q8_5_RecursiveMultiply {
         return side1 + side2;
     }
 
-    int minProductFast(int a, int b) {
+    static int minProductFast(int a, int b) {
         int small = a < b ? a : b;
         int big = a < b ? b : a;
         return minProductFastHelper(small, big);
     }
 
-    int minProductFastHelper(int small, int big) {
+    static int minProductFastHelper(int small, int big) {
         if (small == 0) return 0;
         if (small == 1) return big;
 
@@ -66,9 +66,8 @@ public class Q8_5_RecursiveMultiply {
 
 
     public static void main(String[] args) {
-        Q8_5_RecursiveMultiply app = new Q8_5_RecursiveMultiply();
-        System.out.println(app.minProduct(5, 8));
-        System.out.println(app.minProductMemo(5, 8));
-        System.out.println(app.minProductFast(5, 8));
+        System.out.println(minProduct(5, 8));
+        System.out.println(minProductMemo(5, 8));
+        System.out.println(minProductFast(5, 8));
     }
 }

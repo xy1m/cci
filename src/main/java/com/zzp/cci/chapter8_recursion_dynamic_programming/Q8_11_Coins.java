@@ -2,7 +2,7 @@ package com.zzp.cci.chapter8_recursion_dynamic_programming;
 
 public class Q8_11_Coins {
     // Recursion
-    public int makeChange(int amount, int[] denoms, int index) {
+    public static int makeChange(int amount, int[] denoms, int index) {
         if (index == denoms.length - 1) return 1;
         int denomAmount = denoms[index];
         int ways = 0;
@@ -13,13 +13,13 @@ public class Q8_11_Coins {
         return ways;
     }
 
-    public int makeChange(int n) {
+    public static int makeChange(int n) {
         int[] denoms = new int[]{25, 10, 5, 1};
         return makeChange(n, denoms, 0);
     }
 
     // Add cache
-    public int makeChangeMemo(int amount, int[] denoms, int index, int[][] map) {
+    public static int makeChangeMemo(int amount, int[] denoms, int index, int[][] map) {
         if (map[amount][index] > 0) return map[amount][index];
         if (index == denoms.length - 1) return 1;
         int denomAmount = denoms[index];
@@ -32,17 +32,15 @@ public class Q8_11_Coins {
         return ways;
     }
 
-    public int makeChangeMemo(int n) {
+    public static int makeChangeMemo(int n) {
         int[] denoms = new int[]{25, 10, 5, 1};
         int[][] map = new int[n + 1][denoms.length];
         return makeChangeMemo(n, denoms, 0, map);
     }
 
     public static void main(String[] args) {
-        Q8_11_Coins app = new Q8_11_Coins();
         int coins = 1000;
-
-        System.out.println(app.makeChange(coins));
-        System.out.println(app.makeChangeMemo(coins));
+        System.out.println(makeChange(coins));
+        System.out.println(makeChangeMemo(coins));
     }
 }

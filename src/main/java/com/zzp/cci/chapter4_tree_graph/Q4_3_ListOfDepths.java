@@ -59,21 +59,21 @@ public class Q4_3_ListOfDepths {
 
     public static void main(String[] args) {
         int[] arr = new int[]{1, 3, 4, 5, 6, 8, 9, 12};
-        TreeNode node = TreeNode.createMinimalBST(arr, 0, arr.length - 1);
-        node.print();
-
-        List<List<TreeNode>> levels = dfs(node);
-        for (List<TreeNode> i : levels) {
-            for (TreeNode j : i) {
-                System.out.print(j.val + " ");
+        TreeNode root = TreeNode.createMinimalBST(arr, 0, arr.length - 1);
+        root.print();
+        // DFS
+        List<List<TreeNode>> levels = dfs(root);
+        for (List<TreeNode> level : levels) {
+            for (TreeNode node : level) {
+                System.out.print(node.val + " ");
             }
             System.out.println();
         }
-        System.out.println("===");
-        levels = bfs(node);
-        for (List<TreeNode> i : levels) {
-            for (TreeNode j : i) {
-                System.out.print(j.val + " ");
+        // BFS
+        levels = bfs(root);
+        for (List<TreeNode> level : levels) {
+            for (TreeNode node : level) {
+                System.out.print(node.val + " ");
             }
             System.out.println();
         }

@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Q8_4_PowSet {
-    List<List<Integer>> getSubsets(List<Integer> set, int index) {
+public class Q8_04_PowSet {
+    static List<List<Integer>> getSubsets(List<Integer> set, int index) {
         List<List<Integer>> allSubsets = null;
         if (set.size() == index) {// Base case add empty set index=0
             allSubsets = new ArrayList<>();
@@ -26,7 +26,7 @@ public class Q8_4_PowSet {
         return allSubsets;
     }
 
-    public List<List<Integer>> getSubsetBit(List<Integer> set) {
+    public static List<List<Integer>> getSubsetBit(List<Integer> set) {
         List<List<Integer>> result = new ArrayList<>();
         int max = 1 << set.size();
         for (int i = 0; i < max; i++) {
@@ -36,7 +36,7 @@ public class Q8_4_PowSet {
         return result;
     }
 
-    public List<Integer> covertIntToSet(Integer x, List<Integer> set) {
+    public static List<Integer> covertIntToSet(Integer x, List<Integer> set) {
         List<Integer> result = new ArrayList<>();
         int index = 0;
         for (int k = x; k > 0; k >>= 1) {
@@ -49,12 +49,10 @@ public class Q8_4_PowSet {
     }
 
     public static void main(String[] args) {
-        Q8_4_PowSet powSet = new Q8_4_PowSet();
         List<Integer> source = Arrays.asList(1, 2, 3, 4, 5, 6);
-
-        List<List<Integer>> res = powSet.getSubsets(source, 0);
+        List<List<Integer>> res = getSubsets(source, 0);
         res.forEach(cur -> System.out.println(cur.stream().map(i -> i.toString()).collect(Collectors.joining(","))));
-        res = powSet.getSubsetBit(source);
+        res = getSubsetBit(source);
         res.forEach(cur -> System.out.println(cur.stream().map(i -> i.toString()).collect(Collectors.joining(","))));
     }
 }

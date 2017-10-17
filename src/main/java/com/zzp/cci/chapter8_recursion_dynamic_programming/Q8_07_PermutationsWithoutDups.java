@@ -3,9 +3,9 @@ package com.zzp.cci.chapter8_recursion_dynamic_programming;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Q8_7_PermutationsWithoutDups {
+public class Q8_07_PermutationsWithoutDups {
     // build from permutations of first n-1 characters
-    List<String> getPerms(String str) {
+    static List<String> getPerms(String str) {
         if (str == null) return null;
         List<String> permutations = new ArrayList<>();
         if (str.isEmpty()) {
@@ -23,14 +23,14 @@ public class Q8_7_PermutationsWithoutDups {
         return permutations;
     }
 
-    public String insertCharAt(String word, char c, int index) {
+    public static String insertCharAt(String word, char c, int index) {
         String left = word.substring(0, index);
         String right = word.substring(index);
         return left + c + right;
     }
 
     // build from permutations based on size
-    public List<String> getPerms2(String str) {
+    public static List<String> getPerms2(String str) {
         if (str == null) return null;
         int len = str.length();
         List<String> result = new ArrayList<>();
@@ -49,13 +49,13 @@ public class Q8_7_PermutationsWithoutDups {
         return result;
     }
 
-    public List<String> getPerms3(String str) {
+    public static List<String> getPerms3(String str) {
         List<String> result = new ArrayList<>();
         getPerms3("", str, result);
         return result;
     }
 
-    public void getPerms3(String prefix, String remainder, List<String> result) {
+    public static void getPerms3(String prefix, String remainder, List<String> result) {
         if (remainder.length() == 0) {
             result.add(prefix);
         }
@@ -68,9 +68,8 @@ public class Q8_7_PermutationsWithoutDups {
     }
 
     public static void main(String[] args) {
-        Q8_7_PermutationsWithoutDups app = new Q8_7_PermutationsWithoutDups();
-        System.out.println(app.getPerms("abc"));
-        System.out.println(app.getPerms2("abc"));
-        System.out.println(app.getPerms3("abc"));
+        System.out.println(getPerms("abc"));
+        System.out.println(getPerms2("abc"));
+        System.out.println(getPerms3("abc"));
     }
 }

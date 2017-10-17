@@ -1,14 +1,14 @@
 package com.zzp.cci.chapter8_recursion_dynamic_programming;
 
-public class Fibonacci {
+public class Q8_00_Fibonacci {
 
-    public int f1(int i) {
+    public static int f1(int i) {
         if (i == 0) return 0;
         if (i == 1) return 1;
         return f1(i - 1) + f1(i - 2);
     }
 
-    public int f2(int i, int[] memo) {
+    public static int f2(int i, int[] memo) {
         if (i == 0 || i == 1) return i;
         if (memo[i] == 0) {
             memo[i] = f2(i - 1, memo) + f2(i - 2, memo);
@@ -16,7 +16,7 @@ public class Fibonacci {
         return memo[i];
     }
 
-    public int f3(int n) {
+    public static int f3(int n) {
         if (n == 0 || n == 1) return n;
         int a = 0;
         int b = 1;
@@ -29,7 +29,6 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
-        Fibonacci fibonacci = new Fibonacci();
-        System.out.println(fibonacci.f2(100, new int[101]));
+        System.out.println(f2(100, new int[101]));
     }
 }

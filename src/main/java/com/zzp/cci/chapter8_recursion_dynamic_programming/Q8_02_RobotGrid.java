@@ -5,30 +5,31 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Q8_2_RobotGrid {
-    class Point {
-        int x;
-        int y;
+class Point {
+    int x;
+    int y;
 
-        public Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        public boolean equals(Object o) {
-            if (!(o instanceof Point)) {
-                return false;
-            }
-            Point p = (Point) o;
-            return this.x == p.x && this.y == p.y;
-        }
-
-        public int hashCode() {
-            return (x * y) % 100;
-        }
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
-    List<Point> getPath(boolean[][] maze) {
+    public boolean equals(Object o) {
+        if (!(o instanceof Point)) {
+            return false;
+        }
+        Point p = (Point) o;
+        return this.x == p.x && this.y == p.y;
+    }
+
+    public int hashCode() {
+        return (x * y) % 100;
+    }
+}
+
+public class Q8_02_RobotGrid {
+
+    static List<Point> getPath(boolean[][] maze) {
         List<Point> path = new ArrayList<>();
         if (maze == null || maze.length == 0) return path;
         Set<Point> failedPoints = new HashSet<>();
@@ -38,7 +39,7 @@ public class Q8_2_RobotGrid {
         return path;
     }
 
-    boolean getPath(boolean[][] maze, int row, int col, List<Point> path, Set<Point> failedPoints) {
+    static boolean getPath(boolean[][] maze, int row, int col, List<Point> path, Set<Point> failedPoints) {
         if (row < 0 || col < 0 || !maze[row][col]) {
             return false;
         }
@@ -57,13 +58,12 @@ public class Q8_2_RobotGrid {
     }
 
     public static void main(String[] args) {
-        Q8_2_RobotGrid app = new Q8_2_RobotGrid();
         boolean[][] maze = new boolean[][]{
                 {true, true, false},
                 {false, true, false},
                 {false, true, true}
         };
-        app.getPath(maze).forEach(p -> System.out.println(p.x + "," + p.y));
+        getPath(maze).forEach(p -> System.out.println(p.x + "," + p.y));
     }
 }
 

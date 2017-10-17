@@ -17,7 +17,7 @@ public class App {
      * <p>
      * <p>
      * <p>
-     * BitOperation operations
+     * Q5_00_BitOperation operations
      * Heap
      * PriorityQueue
      * Sort
@@ -113,41 +113,39 @@ public class App {
         char[] chars = new char[5];
     }
 
-    public static void cashRegister(double cost,double pay){
-        double diff=pay-cost;
-        if(diff<0){
+    public static void cashRegister(double cost, double pay) {
+        double diff = pay - cost;
+        if (diff < 0) {
             throw new RuntimeException("Pay not enough");
         }
-        Double[] coins=new Double[]{20d,5d,1d,0.25,0.1,0.01};
-        combine(coins,diff,0,new ArrayList<Double>());
+        Double[] coins = new Double[]{20d, 5d, 1d, 0.25, 0.1, 0.01};
+        combine(coins, diff, 0, new ArrayList<Double>());
     }
 
-    public static void combine(Double[] coins, Double amount,int index,List<Double> tmp){
-        if(index>=coins.length) return;
-        if(amount.equals(0)){
+    public static void combine(Double[] coins, Double amount, int index, List<Double> tmp) {
+        if (index >= coins.length) return;
+        if (amount.equals(0)) {
             // print tmp;
-            tmp.forEach(i->System.out.print(i+" "));
+            tmp.forEach(i -> System.out.print(i + " "));
             System.out.println();
             return;
         }
-        double denormAmount=coins[index];
-        if(denormAmount>amount){
-            combine(coins,amount,index+1,tmp);
+        double denormAmount = coins[index];
+        if (denormAmount > amount) {
+            combine(coins, amount, index + 1, tmp);
             return;
         }
-        for(int i=0;i*denormAmount<=amount;i++){
-            double remain=amount-i*denormAmount;
-            for(int j=0;j<i;j++){
+        for (int i = 0; i * denormAmount <= amount; i++) {
+            double remain = amount - i * denormAmount;
+            for (int j = 0; j < i; j++) {
                 tmp.add(denormAmount);
             }
-            combine(coins,remain,index+1,tmp);
-            for(int j=0;j<i;j++){
-                tmp.remove(tmp.size()-1);
+            combine(coins, remain, index + 1, tmp);
+            for (int j = 0; j < i; j++) {
+                tmp.remove(tmp.size() - 1);
             }
         }
     }
-
     public static void main(String[] args) {
-        cashRegister(10.49,11);
     }
 }

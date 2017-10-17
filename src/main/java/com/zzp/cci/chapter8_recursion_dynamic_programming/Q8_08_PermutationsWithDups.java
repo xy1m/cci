@@ -5,16 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Q8_8_PermutationsWithDups {
+public class Q8_08_PermutationsWithDups {
 
-    public List<String> getPerms(String str) {
+    public static List<String> getPerms(String str) {
         List<String> result = new ArrayList<>();
         Map<Character, Integer> counter = buildFreqTable(str);
         printPerms(counter, "", str.length(), result);
         return result;
     }
 
-    public Map<Character, Integer> buildFreqTable(String str) {
+    public static Map<Character, Integer> buildFreqTable(String str) {
         Map<Character, Integer> map = new HashMap<>();
         if (str == null || str.isEmpty()) return map;
         for (int i = 0; i < str.length(); i++) {
@@ -25,7 +25,7 @@ public class Q8_8_PermutationsWithDups {
         return map;
     }
 
-    public void printPerms(Map<Character, Integer> counter, String prefix, int remaining, List<String> result) {
+    public static void printPerms(Map<Character, Integer> counter, String prefix, int remaining, List<String> result) {
         if (remaining == 0) {
             result.add(prefix);
             return;
@@ -41,7 +41,6 @@ public class Q8_8_PermutationsWithDups {
     }
 
     public static void main(String[] args) {
-        Q8_8_PermutationsWithDups app = new Q8_8_PermutationsWithDups();
-        System.out.println(app.getPerms("aabc"));
+        System.out.println(getPerms("aabc"));
     }
 }
