@@ -25,7 +25,7 @@ public class SerializeBinaryTree {
     }
 
 
-    // Decodes your encoded val to chapter4_tree_graph.
+    // Decodes your encoded val to chapter04_tree_graph.
     public TreeNode deserializePreOrder(String data) {
         Queue<String> nodes = new LinkedList<>();
         nodes.addAll(Arrays.asList(data.split(",")));
