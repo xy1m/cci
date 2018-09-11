@@ -1,2 +1,3 @@
-# PlayGround
-Playground including algorithms, data structure, multi threads ect.
+# cracking-code-interview-practice
+
+Solutions for book Cracking The Code Interview
