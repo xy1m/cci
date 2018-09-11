@@ -146,6 +146,8 @@ public class App {
             }
         }
     }
+
     public static void main(String[] args) {
+        int[][] prerequisites = new int[][]{new int[]{0, 2}, new int[]{1, 2}, new int[]{2, 0}};
     }
 }
