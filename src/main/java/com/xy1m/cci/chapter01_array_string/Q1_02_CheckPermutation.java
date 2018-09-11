@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter01_array_string;
+package com.xy1m.cci.chapter01_array_string;
 
 import java.util.Arrays;
 

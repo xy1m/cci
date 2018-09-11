@@ -1,7 +1,7 @@
-package com.zzp.cci.statistics;
+package com.xy1m.cci.statistics;
 
 
-import com.zzp.cci.sort.QuickSort;
+import com.xy1m.cci.sort.QuickSort;
 
 /**
  * Created by zhenpeng on 10/25/16.

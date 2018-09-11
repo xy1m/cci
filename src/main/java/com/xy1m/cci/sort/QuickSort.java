@@ -1,6 +1,6 @@
-package com.zzp.cci.sort;
+package com.xy1m.cci.sort;
 
-import com.zzp.cci.util.Utils;
+import com.xy1m.cci.util.Utils;
 
 import java.util.Random;
 

@@ -1,10 +1,6 @@
-package com.zzp.cci.util;
+package com.xy1m.cci.util;
 
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
     public static void main(String[] args) {

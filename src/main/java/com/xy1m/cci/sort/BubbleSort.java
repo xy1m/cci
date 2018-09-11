@@ -1,6 +1,6 @@
-package com.zzp.cci.sort;
+package com.xy1m.cci.sort;
 
-import com.zzp.cci.util.Utils;
+import com.xy1m.cci.util.Utils;
 
 /**
  * 比较相邻的元素。如果第一个比第二个大，就交换他们两个。

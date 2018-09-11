@@ -1,4 +1,4 @@
-package com.zzp.oo.parkinglot;
+package com.xy1m.oo.parkinglot;
 
 public class Car extends Vehicle {
     public Car() {

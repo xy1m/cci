@@ -1,4 +1,4 @@
-package com.zzp.cci.chapter01_array_string;
+package com.xy1m.cci.chapter01_array_string;
 
 /**
  * Created by zhenpeng on 8/21/17.

@@ -1,6 +1,6 @@
-package com.zzp.cci.sort;
+package com.xy1m.cci.sort;
 
-import com.zzp.cci.util.Utils;
+import com.xy1m.cci.util.Utils;
 
 /**
  * 首先，在所有未排序的序列中找到最小元素，存放到排序序列起始位置，

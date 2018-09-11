@@ -1,6 +1,6 @@
-package com.zzp.cci.chapter02_linkedlist;
+package com.xy1m.cci.chapter02_linkedlist;
 
-import com.zzp.cci.lib.ListNode;
+import com.xy1m.cci.lib.ListNode;
 
 import java.util.Stack;
 

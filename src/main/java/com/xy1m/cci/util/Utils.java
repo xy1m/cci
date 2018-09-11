@@ -1,4 +1,4 @@
-package com.zzp.cci.util;
+package com.xy1m.cci.util;
 
 /**
  * Created by zhenpeng on 10/17/16.
