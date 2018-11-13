@@ -7,15 +7,7 @@ import java.util.Stack;
 /**
  * Created by zhenpeng on 8/23/17.
  */
-class Result {
-    public ListNode node;
-    public boolean result;
 
-    public Result(ListNode node, boolean result) {
-        this.node = node;
-        this.result = result;
-    }
-}
 
 public class Q2_06_Palindrome {
     // Reverse and compare
@@ -69,7 +61,8 @@ public class Q2_06_Palindrome {
     public static Result isPalindromeRecurse(ListNode head, int length) {
         if (head == null || length == 0) {
             return new Result(null, true);
-        } else if (length == 1) {
+        }
+        else if (length == 1) {
             return new Result(head.next, true);
         }
         Result res = isPalindromeRecurse(head.next, length - 2);
@@ -108,6 +101,16 @@ public class Q2_06_Palindrome {
         }
         Q2_00_ReverseLinkedList.reverse2(reversed);
         return true;
+    }
+
+    static class Result {
+        public ListNode node;
+        public boolean result;
+
+        public Result(ListNode node, boolean result) {
+            this.node = node;
+            this.result = result;
+        }
     }
 
     public static void main(String... args) {

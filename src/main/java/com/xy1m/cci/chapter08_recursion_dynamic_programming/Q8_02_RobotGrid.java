@@ -5,29 +5,29 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-class Point {
-    int x;
-    int y;
-
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    public boolean equals(Object o) {
-        if (!(o instanceof Point)) {
-            return false;
-        }
-        Point p = (Point) o;
-        return this.x == p.x && this.y == p.y;
-    }
-
-    public int hashCode() {
-        return (x * y) % 100;
-    }
-}
 
 public class Q8_02_RobotGrid {
+    static class Point {
+        int x;
+        int y;
+
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public boolean equals(Object o) {
+            if (!(o instanceof Point)) {
+                return false;
+            }
+            Point p = (Point) o;
+            return this.x == p.x && this.y == p.y;
+        }
+
+        public int hashCode() {
+            return (x * y) % 100;
+        }
+    }
 
     static List<Point> getPath(boolean[][] maze) {
         List<Point> path = new ArrayList<>();

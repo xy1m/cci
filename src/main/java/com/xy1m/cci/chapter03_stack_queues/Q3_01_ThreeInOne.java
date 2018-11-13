@@ -1,56 +1,57 @@
 package com.xy1m.cci.chapter03_stack_queues;
 
-class FixedMultiStack {
-    private int numberOfStacks;
-    private int stackCapacity;
-    private int[] values;
-    private int[] sizes;
-
-    public FixedMultiStack(int numberOfStacks, int stackCapacity) {
-        this.numberOfStacks = numberOfStacks;
-        this.stackCapacity = stackCapacity;
-        values = new int[numberOfStacks * stackCapacity];
-        sizes = new int[numberOfStacks];
-    }
-
-    public void push(int num, int value) {
-        if (isFull(num)) throw new RuntimeException("chapter03_stack_queues overflow");
-        sizes[num]++;
-        values[indexOfTop(num)] = value;
-    }
-
-    public int pop(int num) {
-        if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty chapter03_stack_queues");
-        int item = values[indexOfTop(num)];
-        // clear element;
-        values[indexOfTop(num)] = 0;
-        sizes[num]--;
-        return item;
-    }
-
-    public int peek(int num) {
-        if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty chapter03_stack_queues");
-        return values[indexOfTop(num)];
-    }
-
-    public boolean isFull(int num) {
-        return sizes[num] == stackCapacity;
-    }
-
-    public boolean isEmpty(int num) {
-        return sizes[num] == 0;
-    }
-
-    private int indexOfTop(int num) {
-        return stackCapacity * num + sizes[num] - 1;
-    }
-}
-
-class MultiStack {
-    //TODO
-}
 
 public class Q3_01_ThreeInOne {
+    static class FixedMultiStack {
+        private int numberOfStacks;
+        private int stackCapacity;
+        private int[] values;
+        private int[] sizes;
+
+        public FixedMultiStack(int numberOfStacks, int stackCapacity) {
+            this.numberOfStacks = numberOfStacks;
+            this.stackCapacity = stackCapacity;
+            values = new int[numberOfStacks * stackCapacity];
+            sizes = new int[numberOfStacks];
+        }
+
+        public void push(int num, int value) {
+            if (isFull(num)) throw new RuntimeException("chapter03_stack_queues overflow");
+            sizes[num]++;
+            values[indexOfTop(num)] = value;
+        }
+
+        public int pop(int num) {
+            if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty chapter03_stack_queues");
+            int item = values[indexOfTop(num)];
+            // clear element;
+            values[indexOfTop(num)] = 0;
+            sizes[num]--;
+            return item;
+        }
+
+        public int peek(int num) {
+            if (isEmpty(num)) throw new RuntimeException("Trying to pop from empty chapter03_stack_queues");
+            return values[indexOfTop(num)];
+        }
+
+        public boolean isFull(int num) {
+            return sizes[num] == stackCapacity;
+        }
+
+        public boolean isEmpty(int num) {
+            return sizes[num] == 0;
+        }
+
+        private int indexOfTop(int num) {
+            return stackCapacity * num + sizes[num] - 1;
+        }
+    }
+
+    static class MultiStack {
+        //TODO
+    }
+
     public static void main(String[] args) {
         FixedMultiStack fixedMultiStack = new FixedMultiStack(3, 3);
         fixedMultiStack.push(0, 1);

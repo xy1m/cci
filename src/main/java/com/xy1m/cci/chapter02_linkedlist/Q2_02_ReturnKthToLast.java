@@ -51,6 +51,10 @@ public class Q2_02_ReturnKthToLast {
         return p1;
     }
 
+    static class IntWrapper {
+        int value = 0;
+    }
+
     public static void main(String... args) {
         ListNode nodes = ListNode.from(1, 2, 3, 4, 5);
         nthToLast(nodes, 2);
@@ -59,6 +63,4 @@ public class Q2_02_ReturnKthToLast {
     }
 }
 
-class IntWrapper {
-    int value = 0;
-}
+

@@ -6,10 +6,7 @@ import com.xy1m.cci.lib.ListNode;
 /**
  * Created by zhenpeng on 8/22/17.
  */
-class PartialSum {
-    public ListNode sum = null;
-    public int carry = 0;
-}
+
 public class Q2_05_SumLists {
 
     public static ListNode addLists(ListNode l1, ListNode l2, int carry) {
@@ -34,13 +31,15 @@ public class Q2_05_SumLists {
 
         if (len1 < len2) {
             l1 = padList(l1, len2 - len1);
-        } else {
+        }
+        else {
             l2 = padList(l2, len1 - len2);
         }
         PartialSum sum = addListHelper(l1, l2);
         if (sum.carry == 0) {
             return sum.sum;
-        } else {
+        }
+        else {
             ListNode result = insertBefore(sum.sum, sum.carry);
             return result;
         }
@@ -71,6 +70,11 @@ public class Q2_05_SumLists {
         sum.sum = full_result;
         sum.carry = val / 10;
         return sum;
+    }
+
+    static class PartialSum {
+        public ListNode sum = null;
+        public int carry = 0;
     }
 
     public static void main(String... args) {

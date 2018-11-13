@@ -9,6 +9,56 @@ import java.util.Queue;
  * Given a directed graph, design an algorithm to  nd out whether there is a route between two nodes.
  */
 public class Q4_1_RouteBetweenNodes {
+
+    static class Graph {
+        public static int MAX_VERTICES = 6;
+        Node[] vertices;
+        int count;
+
+        public Graph() {
+            vertices = new Node[MAX_VERTICES];
+            count = 0;
+        }
+
+        public void addNode(Node x) {
+            if (count < vertices.length) {
+                vertices[count++] = x;
+            }
+            else {
+                System.out.println("Graph is full");
+            }
+        }
+    }
+
+    enum State {
+        Unvisited,
+        Visited,
+        Visiting
+    }
+
+    static class Node {
+        Node[] adjacents;
+        State state;
+
+        int adjacentCount;
+        String vertex;
+
+        public Node(String vertex, int adjacentCount) {
+            this.vertex = vertex;
+            this.adjacentCount = 0;
+            this.adjacents = new Node[adjacentCount];
+        }
+
+        public void addAdjacent(Node x) {
+            if (adjacentCount < adjacents.length) {
+                adjacents[adjacentCount++] = x;
+            }
+            else {
+                System.out.println("No more adjacent can be added");
+            }
+        }
+    }
+
     public static boolean search(Graph g, Node start, Node end) {
         if (start == end) return true;
         Queue<Node> q = new LinkedList<>();
@@ -24,7 +74,8 @@ public class Q4_1_RouteBetweenNodes {
                 if (v.state == State.Unvisited) {
                     if (v == end) {
                         return true;
-                    } else {
+                    }
+                    else {
                         v.state = State.Visiting;
                         q.add(v);
                     }
@@ -67,52 +118,7 @@ public class Q4_1_RouteBetweenNodes {
     }
 }
 
-class Node {
-    Node[] adjacents;
-    State state;
 
-    int adjacentCount;
-    String vertex;
-
-    public Node(String vertex, int adjacentCount) {
-        this.vertex = vertex;
-        this.adjacentCount = 0;
-        this.adjacents = new Node[adjacentCount];
-    }
-
-    public void addAdjacent(Node x) {
-        if (adjacentCount < adjacents.length) {
-            adjacents[adjacentCount++] = x;
-        } else {
-            System.out.println("No more adjacent can be added");
-        }
-    }
-}
-
-class Graph {
-    public static int MAX_VERTICES = 6;
-    Node[] vertices;
-    int count;
-
-    public Graph() {
-        vertices = new Node[MAX_VERTICES];
-        count = 0;
-    }
-
-    public void addNode(Node x) {
-        if (count < vertices.length) {
-            vertices[count++] = x;
-        } else {
-            System.out.println("Graph is full");
-        }
-    }
-}
-
-enum State {
-    Unvisited,
-    Visited,
-    Visiting
-}
 
 
 

@@ -1,7 +1,9 @@
 package com.xy1m.cci.chapter08_recursion_dynamic_programming;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.StringJoiner;
 
@@ -75,13 +77,39 @@ public class Q8_09_Parens {
         return joiner.toString();
     }
 
+    public static List<String> generateParenthesis(int n) {
+        return new ArrayList<>(parens(n));
+    }
+    static Set<String> parens(int n){
+        Set<String> result=new HashSet<>();
+        if(n==0){
+            return result;
+        }
+        if(n==1){
+            result.add("()");
+            return result;
+        }
+        Set<String> previous=parens(n-1);
+        for(String pre: previous){
+            result.add("()"+pre);
+            result.add(pre+"()");
+            result.add("("+pre+")");
+            for(int i=0;i<pre.length()-1;i++){
+                if(pre.charAt(i)=='('&&pre.charAt(i+1)==')'){
+                    result.add(pre.substring(0,i+1)+"()"+pre.substring(i+1));
+                }
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         /*String nums = "012345678";
         System.out.println(nums.substring(0, 2));
         System.out.println(nums.substring(2));
         System.out.println(nums.substring(2, 9));*/
 
-        System.out.println(prettyStr(parensRecursive(1)));
+        /*System.out.println(prettyStr(parensRecursive(1)));
         System.out.println(prettyStr(parensRecursive(2)));
         System.out.println(prettyStr(parensRecursive(3)));
         System.out.println(prettyStr(parensRecursive(4)));
@@ -94,6 +122,9 @@ public class Q8_09_Parens {
         long s3 = System.currentTimeMillis();
 
         System.out.println(s2 - s1);
-        System.out.println(s3 - s2);
+        System.out.println(s3 - s2);*/
+        for (String s : generateParenthesis(6)) {
+            System.out.println(s);
+        }
     }
 }

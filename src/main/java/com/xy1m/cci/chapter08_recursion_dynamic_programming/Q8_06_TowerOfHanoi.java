@@ -2,37 +2,38 @@ package com.xy1m.cci.chapter08_recursion_dynamic_programming;
 
 import java.util.Stack;
 
-class Tower {
-    Stack<Integer> disks;
-    int index;
-
-    public Tower(int i) {
-        index = i;
-        disks = new Stack<>();
-    }
-
-    public void add(int d) {
-        if (!disks.isEmpty() && disks.peek() <= d) {
-            System.out.println("Error");
-        } else {
-            disks.push(d);
-        }
-    }
-
-    public void moveTopTo(Tower to) {
-        to.add(disks.pop());
-    }
-
-    public void moveDisks(int n, Tower destination, Tower buffer) {
-        if (n > 0) {
-            moveDisks(n - 1, buffer, destination);
-            moveTopTo(destination);
-            buffer.moveDisks(n - 1, destination, this);
-        }
-    }
-}
-
 public class Q8_06_TowerOfHanoi {
+    static class Tower {
+        Stack<Integer> disks;
+        int index;
+
+        public Tower(int i) {
+            index = i;
+            disks = new Stack<>();
+        }
+
+        public void add(int d) {
+            if (!disks.isEmpty() && disks.peek() <= d) {
+                System.out.println("Error");
+            }
+            else {
+                disks.push(d);
+            }
+        }
+
+        public void moveTopTo(Tower to) {
+            to.add(disks.pop());
+        }
+
+        public void moveDisks(int n, Tower destination, Tower buffer) {
+            if (n > 0) {
+                moveDisks(n - 1, buffer, destination);
+                moveTopTo(destination);
+                buffer.moveDisks(n - 1, destination, this);
+            }
+        }
+    }
+
     public static void moveDisks(int n) {
         Tower origin = new Tower(0);
         Tower buffer = new Tower(1);

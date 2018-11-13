@@ -4,30 +4,6 @@ package com.xy1m.cci.chapter03_stack_queues;
 import java.util.LinkedList;
 import java.util.Queue;
 
-abstract class Animal {
-    public int order;
-    public String name;
-
-    public Animal(String name) {
-        this.name = name;
-    }
-
-    public boolean idOlderThan(Animal animal) {
-        return this.order < animal.order;
-    }
-}
-
-class Dog extends Animal {
-    public Dog(String name) {
-        super(name);
-    }
-}
-
-class Cat extends Animal {
-    public Cat(String name) {
-        super(name);
-    }
-}
 
 public class Q3_06_AnimalShelter {
     Queue<Dog> dogs = new LinkedList<>();
@@ -48,7 +24,8 @@ public class Q3_06_AnimalShelter {
         Cat cat = cats.peek();
         if (dog.idOlderThan(cat)) {
             return dog;
-        } else {
+        }
+        else {
             return cat;
         }
     }
@@ -59,6 +36,31 @@ public class Q3_06_AnimalShelter {
 
     public Cat dequeueCats() {
         return cats.poll();
+    }
+
+    static abstract class Animal {
+        public int order;
+        public String name;
+
+        public Animal(String name) {
+            this.name = name;
+        }
+
+        public boolean idOlderThan(Animal animal) {
+            return this.order < animal.order;
+        }
+    }
+
+    static class Dog extends Animal {
+        public Dog(String name) {
+            super(name);
+        }
+    }
+
+    static class Cat extends Animal {
+        public Cat(String name) {
+            super(name);
+        }
     }
 
     public static void main(String[] args) {
