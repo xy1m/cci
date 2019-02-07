@@ -1,4 +1,4 @@
-package com.xy1m.oo.parkinglot;
+package com.xy1m.cci.oo.design.parkinglot;
 
 public class ParkingSpot {
 
