@@ -1,7 +1,6 @@
 package com.xy1m.cci.chapter05_bit_manipulation;
 
 public class Q5_06_Conversion {
-    //TODO
     public static int bitSwapRequired(int a, int b) {
         int count = 0;
         // c&(c-1) will clear least significant bit

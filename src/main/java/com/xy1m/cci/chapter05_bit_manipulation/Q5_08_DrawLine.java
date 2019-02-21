@@ -1,7 +1,6 @@
 package com.xy1m.cci.chapter05_bit_manipulation;
 
 public class Q5_08_DrawLine {
-    //TODO
     public static void drawLine(byte[] screen, int width, int x1, int x2, int y) {
         int start_offset = x1 % 8;
         int first_full_byte = x1 / 8;
